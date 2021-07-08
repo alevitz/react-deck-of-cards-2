@@ -1,10 +1,14 @@
 
-// import './Card.css';
+import './Card.css';
+import {useState} from 'react';
 
-function Card() {
+function Card({ image }) {
+  
+  const [rotate, setRotate] = useState(Math.round(Math.random()*360)); 
+
   return (
-    <div className="Card">
-      
+    <div className="card" style={{transform: `rotate(${rotate}deg)`}}>
+      <img src={image} alt="card" />
     </div>
   );
 }
